@@ -13,6 +13,7 @@ class HomeRepositoryImpl implements HomeRepository {
       final response = await homeDataSource.getData();
       return Right(response.data);
     } catch (e) {
+      log(e.toString());
       return const Left("Not found");
     }
   }

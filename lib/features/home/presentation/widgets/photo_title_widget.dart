@@ -12,16 +12,19 @@ class PhotoandTitleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        CircleAvatar(
-            radius: MediaQuery.of(context).size.width * 0.15,
-            backgroundImage: AssetImage(photoPath)),
-        SizedBox(
-          height: MediaQuery.of(context).size.height * 0.04,
-        ),
-        Text(title)
-      ],
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        children: [
+          CircleAvatar(
+              radius: MediaQuery.of(context).size.width * 0.15,
+              backgroundImage: NetworkImage(photoPath)),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.04,
+          ),
+          Text(title)
+        ],
+      ),
     );
   }
 }
